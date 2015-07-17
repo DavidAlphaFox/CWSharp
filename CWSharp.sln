@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yamool.CWSharp", "src\Yamool.CWSharp.csproj", "{086B6E74-55FA-45B2-A66E-BBA9F1A78607}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yamool.CWSharp.Tests", "test\Yamool.CWSharp.Tests.csproj", "{FDEB2111-51C9-463E-A1CA-382154728FAD}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "contrib", "contrib", "{D24D87D8-D9B4-4B13-858C-07966E3F35B0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucene.Net.CWSharp", "contrib\LuceneNet\Lucene.Net.CWSharp.csproj", "{712453DB-58B2-43E4-9BC6-18EA5D155CDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yamool.CWSharp.Tests", "test\Yamool.CWSharp.Tests\Yamool.CWSharp.Tests.csproj", "{FDEB2111-51C9-463E-A1CA-382154728FAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{086B6E74-55FA-45B2-A66E-BBA9F1A78607}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{086B6E74-55FA-45B2-A66E-BBA9F1A78607}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{086B6E74-55FA-45B2-A66E-BBA9F1A78607}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FDEB2111-51C9-463E-A1CA-382154728FAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FDEB2111-51C9-463E-A1CA-382154728FAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FDEB2111-51C9-463E-A1CA-382154728FAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FDEB2111-51C9-463E-A1CA-382154728FAD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{712453DB-58B2-43E4-9BC6-18EA5D155CDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{712453DB-58B2-43E4-9BC6-18EA5D155CDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{712453DB-58B2-43E4-9BC6-18EA5D155CDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{712453DB-58B2-43E4-9BC6-18EA5D155CDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDEB2111-51C9-463E-A1CA-382154728FAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDEB2111-51C9-463E-A1CA-382154728FAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDEB2111-51C9-463E-A1CA-382154728FAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDEB2111-51C9-463E-A1CA-382154728FAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

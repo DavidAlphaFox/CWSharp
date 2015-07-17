@@ -56,7 +56,7 @@
       <Project>{eaf6e855-cc6a-4a5e-8e6b-6d33c96b88c4}</Project>
       <Name>Lucene.Net.CWSharp</Name>
     </ProjectReference>
-    <ProjectReference Include="..\src\Yamool.CWSharp.csproj">
+    <ProjectReference Include="..\..\src\Yamool.CWSharp.csproj">
       <Project>{086b6e74-55fa-45b2-a66e-bba9f1a78607}</Project>
       <Name>Yamool.CWSharp</Name>
     </ProjectReference>
