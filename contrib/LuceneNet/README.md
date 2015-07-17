@@ -1,14 +1,15 @@
 ﻿Lucene.Net分词插件
 =====
-####安装
-```
-Nuget install Lucene.Net.Analysis.CWSharp
-Install-package Lucene.Net.Analysis.CWSharp
-```
+#### 安装
+>Nuget install Lucene.Net.Analysis.CWSharp
+
+> Install-package Lucene.Net.Analysis.CWSharp
+
+####示例
 
 ```c#
  var textSet = new string[]{
-	@"继Google App Engine for PHP在两个星期前去除了其'beta' 标签之后，Google App Engine for Go 在7月8日也以同样的方式，官方移除了'beta' 标签，扩展了 App Engine 的服务水平协议（ Service Level Agreement , SLA）。这意味着，Google App Engine for Go现在是一个通用的可用性产品，可为各种应用提供了可靠的服务。",
+	@"Google发布App Engine的Go语言通用版",
 	@"GitHub如何征服了Google、微软及一切"
 };
 var dir = new RAMDirectory();
@@ -27,7 +28,7 @@ writer.Dispose();
 //搜索
 var searcher = new IndexSearcher(dir, true);
 var parser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "text", analyzer);
-var query = parser.Parse("微软 google");
+var query = parser.Parse("微软");
 var hits = searcher.Search(query, 10);
 //高亮显示
 var highlighter = new Highlighter(new QueryScorer(query));
@@ -40,5 +41,3 @@ for (var i = 0; i < hits.TotalHits; i++)
 	Console.WriteLine(result);
 }
 ```
-> GitHub如何征服了Google、<B>微软</B>及一切
-> 继<B>Google</B> App Engine for PHP在两个星期前去除了其'beta' 标签之后.....
