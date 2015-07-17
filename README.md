@@ -9,7 +9,8 @@ CWSharp
 	- StopwordTokenizer
 	- 自定义分词接口
 - 支持自定义词典
-- 支持Lucene.Net分词
+- 支持Lucene.Net
+- 支持.NET 3.5或4.0+
 - MIT授权协议
 
 ##### 安装&编译
@@ -23,17 +24,16 @@ PM> install-package CWSharp
 ```
 - 编译
 ```
-build.cmd v4.5 Release //.NET 4.5
-build.cmd v4.0 Release //.NET 4.0
-build.cmd v3.5 Release //.NET 3.5
+build.cmd [.NET版本号] Release //v4.5,v4.0,v3.5
 ```
-##### 算法
-- 基于正向最大匹配的算法。[介绍](http://technology.chtsai.org/mmseg/)
-- 词典使用DAWG结构，比传统的前缀树占用更少的内存空间。[介绍](https://en.wikipedia.org/wiki/Deterministic_acyclic_finite_state_automaton)
 
-##### TODO
-- HMM算法，识别未登记词语以及人名、地名识别
-- 支持跨平台Windows、Linux
+##### 扩展
+- [词典](https://github.com/yamool/CWSharp/tree/master/dict) - 介绍关于DAWG词典文件格式、生成以及如何添加新的词汇
+- [Lucene.Net.CWSharp](https://github.com/yamool/CWSharp/tree/master/contrib/LuceneNet) - Lucene.Net的分词插件，支持搜索高亮显示
+
+##### 算法
+- 基于正向最大匹配的算法。[MMSEG算法](http://technology.chtsai.org/mmseg/)
+- 词典基于DAWG结构，比传统的前缀树占用更少的内存空间。[DAWG算法](https://en.wikipedia.org/wiki/Deterministic_acyclic_finite_state_automaton)
 
 ##### 示例
 - **StandardTokenizer**
@@ -73,9 +73,8 @@ foreach (var token in tokenizer.Traverse("微软宣布它爱Linux"))
 ```
 > 微软/CJK 宣布/CJK 爱/CJK linux/ALPHANUM
 
-- **自定义分词接口**
+- **自定义分词接口(实现一元分词)**
 ```c#
-//一元分词
 public class CustomTokenizer : ITokenizer
 {
 	private ITokenizer _tokenizer;
@@ -99,9 +98,3 @@ public class CustomTokenizer : ITokenizer
 }
 ```
 > 微/CJK 软/CJK 宣/CJK 布/CJK 它/CJK 爱/CJK linux/ALPHANUM
-
-##### FAQ
-===
-- [词典](https://github.com/yamool/CWSharp/tree/master/dict) - 如何生成DAWG词典文件，如何添加新的词组到DAWG词典中。
-- [lucene.net插件](https://github.com/yamool/CWSharp/tree/master/contrib/LuceneNet) - Lucene.Net分词接口
-
