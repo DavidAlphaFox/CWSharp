@@ -1,13 +1,14 @@
 CWSharp
 ===
-.Net的中英文分词组件。
+.Net中文分词组件，支持中英文、符号或者混合词组(比如：T恤)
 
 ##### 特性
-- 内嵌多种分词算法及可扩展的自定义分词接口
-	- StandardTokenizer
-	- BigramTokenizer
-	- StopwordTokenizer
-	- 自定义分词接口
+- 默认支持多种分词器
+	- StandardTokenizer - 默认分词，基于词典，支持中英文
+	- BigramTokenizer - 二元分词，支持英文
+	- StopwordTokenizer - 自定义过滤词分词，扩展类
+	- UnigramTokenizer - 一元分词
+- 可扩展的自定义分词接口
 - 支持自定义词典
 - 支持Lucene.Net
 - 支持.NET 3.5或4.0+
