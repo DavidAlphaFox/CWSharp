@@ -10,7 +10,7 @@ namespace Yamool.CWSharp
 
     internal sealed class MaximumMatchTokenBreaker : WhiteSpaceTokenBreaker
     {
-        private static readonly IChunkFilter[] Filters = new IChunkFilter[] { new LawlFilter(), new SvwlFilter() };
+        private static readonly IChunkFilter[] Filters = new IChunkFilter[] { new LawlFilter(), new SvwlFilter(), new LsdmfocwFilter() };
         private RewindStringReader _reader;
         private Dawg _dawg;
 
