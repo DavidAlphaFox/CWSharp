@@ -9,7 +9,7 @@ namespace Yamool.CWSharp
 
     internal class Dawg
     {
-        internal const double FILEVERSION = 1.0d;
+        internal const float FILEVERSION = 1.0f;
 
         private DawgNode _root;
 

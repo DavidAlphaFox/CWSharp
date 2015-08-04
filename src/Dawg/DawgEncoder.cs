@@ -10,11 +10,11 @@ namespace Yamool.CWSharp
 
     internal class DawgEncoder
     {
-        private double _version;
+        private float _version;
 
         private DawgEncoder() { }
 
-        public DawgEncoder(double version)
+        public DawgEncoder(float version)
         {
             _version = version;
         }
@@ -77,11 +77,11 @@ namespace Yamool.CWSharp
 
     internal class DawgDecoder
     {
-        private double _version;
+        private float _version;
 
         private DawgDecoder() { }
 
-        public DawgDecoder(double version)
+        public DawgDecoder(float version)
         {
             _version = version;
         }
@@ -91,7 +91,7 @@ namespace Yamool.CWSharp
             
             using (var reader = new BinaryReader(stream))
             {
-                var fileVersion = reader.ReadDouble();
+                var fileVersion = reader.ReadSingle();
                 if (_version != fileVersion)
                 {
                     throw new ApplicationException(string.Format("The file version of dawg is not match.\rThe decoder version is {0},but file version is {1}", _version, fileVersion));
