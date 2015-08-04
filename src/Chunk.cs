@@ -6,16 +6,15 @@ namespace Yamool.CWSharp
     using System;
     using System.Linq;
 
-    internal class Chunk
+    internal struct Chunk
     {
         private WordPoint[] _wordPoints;
         private int _length;
 
-        private Chunk() { }
-
         public Chunk(int length, WordPoint[] wordPoints)
+            : this()
         {
-            _length = length;    
+            _length = length;
             _wordPoints = wordPoints;
         }
 
