@@ -14,6 +14,9 @@ CWSharp
 - 支持.NET 3.5或4.0+
 - MIT授权协议
 
+##### 其它版本
+- [CWSharp-go](https://github.com/zhengchun/cwsharp-go) - Golang版本
+
 ##### 安装&编译
 - NuGet
 ```
@@ -39,8 +42,9 @@ build.cmd [v4.5|v4.0|v3.5] Release
 ##### 示例
 
 ```c#
-var tokenizer = new StopwordTokenizer(new StandardTokenizer("dict.dawg"), new string[] { "的" });
-foreach (var token in tokenizer.Traverse("你是我的小苹果"))
+var tokenizer = new StandardTokenizer("dict.dawg");
+var tokenizer2 = new StopwordTokenizer(tokenizer, new string[] { "的" });
+foreach (var token in tokenizer2.Traverse("你是我的小苹果"))
 {
 	Console.Write(token.Text + "/" + token.Type);
 }
@@ -58,7 +62,8 @@ foreach (var token in tokenizer.Traverse("你是我的小苹果"))
 ```
 研究生命起源 >> 研究/CJK 究生/CJK 生命/CJK 命起/CJK 起源/CJK
 长春市长春药店 >> 长春/CJK 春市/CJK 市长/CJK 长春/CJK 春药/CJK 药店/CJK
-神秘的组织-北京朝阳群众 >> 神秘/CJK 秘的/CJK 的组/CJK 组织/CJK -/PUNC 北京/CJK 京朝/CJK 朝阳/CJK 阳群/CJK 群众/CJK
+神秘的组织-北京朝阳群众 >> 神秘/CJK 秘的/CJK 的组/CJK 组织/CJK -/PUNC 
+							北京/CJK 京朝/CJK 朝阳/CJK 阳群/CJK 群众/CJK
 一次性交一百元 >> 一次/CJK 次性/CJK 性交/CJK 交一/CJK 一百/CJK 百元/CJK
 ```
 
