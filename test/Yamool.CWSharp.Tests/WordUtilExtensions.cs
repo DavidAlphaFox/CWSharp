@@ -5,7 +5,7 @@
 
     public static class WordUtilExtensions
     {
-        public static void AddWords(this WordUtil wordUtil, params string[] words)
+        public static void AddWords(this WordDict wordUtil, params string[] words)
         {
             foreach (var word in words)
             {

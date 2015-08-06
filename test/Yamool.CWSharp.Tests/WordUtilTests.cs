@@ -11,7 +11,7 @@
         [Test]
         public void SimpleTest()
         {
-            var wordUtil = new WordUtil();
+            var wordUtil = new WordDict();
             var words = new string[] { "tap", "taps", "top", "tops" };
             var expectWordCount = words.Length;
 
@@ -23,14 +23,14 @@
             Assert.Greater(ms.Length, 0);
 
             ms.Position = 0;
-            wordUtil = WordUtil.LoadFrom(ms);
+            wordUtil = WordDict.LoadFrom(ms);
             Assert.AreEqual(expectWordCount, wordUtil.Count);            
         }
 
         [TestCase(@"d:\1.txt")]
         public void TestFromTxtFile(string file)
         {
-            var wordUtil = new WordUtil();
+            var wordUtil = new WordDict();
             var expectWordCount = 0;
             using (var sr = new StreamReader(file, Encoding.UTF8))
             {
@@ -54,7 +54,7 @@
             watcher.Reset();
             watcher.Start();
             ms.Position = 0;
-            wordUtil = WordUtil.LoadFrom(ms);
+            wordUtil = WordDict.LoadFrom(ms);
             watcher.Stop();
             Console.WriteLine("load dawg file elapsed time:" + watcher.Elapsed.TotalMilliseconds + "'ms");
             Assert.AreEqual(expectWordCount, wordUtil.Count);
