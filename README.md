@@ -1,6 +1,6 @@
 CWSharp
 ===
-.Net中文分词组件，支持中英文、符号或者混合词组(比如：T恤,卡拉OK等)以及自定义词典。
+.Net的中文分词组件(C#版,跨平台)，支持中英文、符号或者混合词组(比如：T恤,卡拉OK,C#等)以及自定义词典。
 
 ##### 特性
 - 默认支持多种分词器
@@ -11,11 +11,12 @@ CWSharp
 - 可扩展的自定义分词接口
 - 支持自定义词典
 - 支持Lucene.Net
-- 支持.NET 3.5或4.0+
+- 支持.NET 多个版本(3.5,4.0,4.5)以及Mono
+- 支持跨平台(Windows,Linux)
 - MIT授权协议
 
 ##### 其它版本
-- [CWSharp-go](https://github.com/zhengchun/cwsharp-go) - Golang版本
+- [CWSharp-go](https://github.com/zhengchun/cwsharp-go) - Golang版
 
 ##### 安装&编译
 - NuGet
@@ -26,14 +27,21 @@ nuget install CWSharp
 ```
 PM> install-package CWSharp
 ```
-- 编译
+- 编译(Windows)
 ```
 build.cmd [v4.5|v4.0|v3.5] Release
 ```
+- 编译(Linux,Mono)
+```
+Install Mono
+xbuild
+mono Yamool.CWSharp.Tests.exe ~/CWSharp/dict/cwsharp.dawg
+```
 
-##### 扩展
+##### 扩展&帮助
 - [自定义词典](https://github.com/yamool/CWSharp/tree/master/dict) - 介绍关于DAWG词典文件格式、生成以及如何添加新的词汇
 - [Lucene.Net.CWSharp](https://github.com/yamool/CWSharp/tree/master/contrib/LuceneNet) - Lucene.Net的分词插件，支持搜索高亮显示
+- [Setting the source file character encoding for Mono's xbuild](http://stackoverflow.com/questions/6520919/setting-the-source-file-character-encoding-for-monos-xbuild) - Mono编译后字符串编码,更改为936(GB2312)
 
 ##### 说明
 - 基于正向最大匹配的算法。[MMSEG算法](http://technology.chtsai.org/mmseg/)
