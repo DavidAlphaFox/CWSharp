@@ -24,14 +24,10 @@ namespace Yamool.CWSharp
         /// <param name="file">The dawg format file.</param>
         public StandardTokenizer(string file)
         {
-            if (!File.Exists(file))
-            {
-                throw new FileNotFoundException("The file of dawg does not exist.", file);
-            }
-            using (var fs = new FileStream(file, FileMode.Open, FileAccess.Read))
+            using (var stream = Utils.LoadDawgFile(file))
             {
                 var decoder = new DawgDecoder(Dawg.FILEVERSION);
-                _dawg = decoder.Decode(fs);
+                _dawg = decoder.Decode(stream);
             }
         }
 

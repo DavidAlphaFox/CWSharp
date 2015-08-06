@@ -9,11 +9,11 @@ namespace Yamool.CWSharp
     using System.IO;
     using System.Linq;
 
-    public sealed class WordUtil
+    public sealed class WordDict
     {        
         private IDictionary<string, int> _wordBag;
 
-        public WordUtil()
+        public WordDict()
         {
             _wordBag = new Dictionary<string, int>();
         }
@@ -72,11 +72,11 @@ namespace Yamool.CWSharp
             _wordBag[word] = frequency;
         }
 
-        public static WordUtil LoadFrom(Stream input)
+        public static WordDict LoadFrom(Stream input)
         {
             var decoder = new DawgDecoder(Dawg.FILEVERSION);
             var dawg = decoder.Decode(input);
-            var wordUtil = new WordUtil();
+            var wordUtil = new WordDict();
 
             foreach (var pair in dawg.MatchsPrefix(null))
             {                                
@@ -86,15 +86,11 @@ namespace Yamool.CWSharp
             return wordUtil;
         }
 
-        public static WordUtil LoadFrom(string file)
+        public static WordDict LoadFrom(string file)
         {
-            if (!File.Exists(file))
+            using (var stream = Utils.LoadDawgFile(file))
             {
-                throw new FileNotFoundException("The file not found.", file);
-            }
-            using (var fs = new FileStream(file, FileMode.Open, FileAccess.Read))
-            {
-                return LoadFrom(fs);
+                return LoadFrom(stream);
             }
         }
     }

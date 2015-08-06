@@ -3,7 +3,7 @@
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-	<TargetFrameworkVersion Condition=" '$(TargetFrameworkVersion)' == '' ">v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion Condition=" '$(TargetFrameworkVersion)' == '' ">v4.5</TargetFrameworkVersion>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{086B6E74-55FA-45B2-A66E-BBA9F1A78607}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -12,18 +12,18 @@
     <AssemblyName>Yamool.CWSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
-	<OutputPath>bin\$(TargetFrameworkVersion)\$(Configuration)\</OutputPath>
+    <OutputPath>bin\$(TargetFrameworkVersion)\$(Configuration)\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFrameworkVersion)' == 'v3.5' ">
-	<DefineConstants>NET35</DefineConstants>
+    <DefineConstants>NET35</DefineConstants>
     <TargetFrameworkVersionNumber>v3.5</TargetFrameworkVersionNumber>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFrameworkVersion)' == 'v4.0' ">
-	<DefineConstants>NET40</DefineConstants>
+    <DefineConstants>NET40</DefineConstants>
     <TargetFrameworkVersionNumber>v4.0</TargetFrameworkVersionNumber>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFrameworkVersion)' == 'v4.5' ">
-	<DefineConstants>NET45</DefineConstants>
+    <DefineConstants>NET45</DefineConstants>
     <TargetFrameworkVersionNumber>v4.5</TargetFrameworkVersionNumber>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -68,9 +68,10 @@
     <Compile Include="Token.cs" />
     <Compile Include="TokenType.cs" />
     <Compile Include="UnigramTokenizer.cs" />
+    <Compile Include="Utils.cs" />
     <Compile Include="WhiteSpaceTokenBreaker.cs" />
     <Compile Include="WordPoint.cs" />
-    <Compile Include="WordUtil.cs" />
+    <Compile Include="WordDict.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
