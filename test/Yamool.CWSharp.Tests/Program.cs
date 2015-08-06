@@ -8,10 +8,9 @@
 
     static class Program
     {
-        static void Main()
-        {            
-
-            var dawgFile = @"d:\dict.dawg";
+        static void Main(string[] args)
+        {
+            var dawgFile = args[0];
             //BuildDawgFile(dawgFile);           
             var tokenizer = new StandardTokenizer(dawgFile);
             foreach (var token in tokenizer.Traverse("研究生命起源"))
