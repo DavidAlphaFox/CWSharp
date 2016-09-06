@@ -10,7 +10,7 @@ namespace Yamool.CWSharp
     using System.Linq;
 
     public sealed class WordDict
-    {        
+    {
         private IDictionary<string, int> _wordBag;
 
         public WordDict()
@@ -26,11 +26,11 @@ namespace Yamool.CWSharp
             }
         }
 
-        public ICollection<KeyValuePair<string,int>> WordSet
+        public ICollection<KeyValuePair<string, int>> WordSet
         {
             get
             {
-                return new ReadOnlyCollection<KeyValuePair<string,int>>(_wordBag.ToList());
+                return new ReadOnlyCollection<KeyValuePair<string, int>>(_wordBag.ToList());
             }
         }
 
@@ -49,14 +49,6 @@ namespace Yamool.CWSharp
         public bool Contains(string word)
         {
             return _wordBag.ContainsKey(word);
-        }
-
-        public void SaveTo(string file)
-        {
-            using (var fs = new FileStream(file, FileMode.Create, FileAccess.Write))
-            {
-                this.SaveTo(fs);
-            }
         }
 
         public void SaveTo(Stream output)
@@ -79,19 +71,11 @@ namespace Yamool.CWSharp
             var wordUtil = new WordDict();
 
             foreach (var pair in dawg.MatchsPrefix(null))
-            {                                
+            {
                 wordUtil.AddInternal(pair.Key, pair.Value);
             }
 
             return wordUtil;
-        }
-
-        public static WordDict LoadFrom(string file)
-        {
-            using (var stream = Utils.LoadDawgFile(file))
-            {
-                return LoadFrom(stream);
-            }
         }
     }
 }

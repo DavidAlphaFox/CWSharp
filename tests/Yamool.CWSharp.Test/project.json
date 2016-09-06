@@ -1,0 +1,23 @@
+﻿{
+  "name": "test",
+
+  "dependencies": {
+    "Yamool.CWSharp": {
+      "target": "project",
+      "version": "1.0"
+    }
+  },
+  "frameworks": {
+    "netcoreapp1.0": {
+      "imports": [ "dotnet5.6", "portable-net45+win8" ]
+    },
+    "net46": {}
+  },
+  "runtimes": {
+	"win7-x64":{},
+	"centos.7-x64":{}
+  },
+  "buildOptions":{
+	"emitEntryPoint": true
+  }
+}

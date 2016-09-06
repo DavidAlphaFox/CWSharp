@@ -68,7 +68,6 @@
     <Compile Include="Token.cs" />
     <Compile Include="TokenType.cs" />
     <Compile Include="UnigramTokenizer.cs" />
-    <Compile Include="Utils.cs" />
     <Compile Include="WhiteSpaceTokenBreaker.cs" />
     <Compile Include="WordPoint.cs" />
     <Compile Include="WordDict.cs" />

@@ -75,6 +75,13 @@ namespace Yamool.CWSharp
         }
     }
 
+    internal class VersionConflictException : Exception
+    {
+        public VersionConflictException(string msg) : base(msg)
+        {
+        }
+    }
+
     internal class DawgDecoder
     {
         private float _version;
@@ -94,7 +101,7 @@ namespace Yamool.CWSharp
                 var fileVersion = reader.ReadSingle();
                 if (_version != fileVersion)
                 {
-                    throw new ApplicationException(string.Format("The file version of dawg is not match.\rThe decoder version is {0},but file version is {1}", _version, fileVersion));
+                    throw new VersionConflictException(string.Format("The file version of dawg is not match.\rThe decoder version is {0},but file version is {1}", _version, fileVersion));
                 }
                 var allNodes = new DawgNode[reader.ReadInt32()];
                 //read header of dawg file

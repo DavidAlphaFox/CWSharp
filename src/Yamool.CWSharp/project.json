@@ -1,0 +1,26 @@
+{
+  "name": "Yamool.CWSharp",
+  "version": "1.0",
+  "description": "A chinese word segmentation library.",
+
+  "dependencies": {
+    "System.Collections": "4.0.10",
+    "System.IO": "4.0.10",
+    "System.Linq": "4.0.0",
+    "System.Runtime.Extensions": "4.0.10"
+  },
+
+  "frameworks": {
+    "netcoreapp1.0": {
+	 "dependencies": {
+		   "Microsoft.NETCore.App": {
+			"version": "1.0.0",
+			"type": "platform"
+		  }
+	  },
+      "imports": [ "dotnet5.6", "portable-net45+win8" ]
+    },
+    "net46": {}
+  },
+  "runtimes": {}
+}

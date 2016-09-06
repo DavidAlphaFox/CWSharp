@@ -3,9 +3,7 @@
 
 namespace Yamool.CWSharp
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.Specialized;
+    using System;  
 
     public class TokenType : IComparable, IComparable<TokenType>, IEquatable<TokenType>
     {

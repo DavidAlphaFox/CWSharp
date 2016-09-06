@@ -1,28 +1,27 @@
 ﻿namespace Yamool.CWSharp.Tests
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.IO;
-    using System.Text;
 
     static class Program
     {
         static void Main(string[] args)
         {
+            var dawgFile = args[0];
+            Console.WriteLine("reading draw file: " + dawgFile);
 
-            var dawgFile = args.Length > 0 ? args[0] : "https://raw.githubusercontent.com/yamool/CWSharp/master/data/cwsharp.dawg";
-            //BuildDawgFile(dawgFile);           
-            var tokenizer = new StandardTokenizer(dawgFile);
-            foreach (var token in tokenizer.Traverse("研究生命起源"))
+            using (var stream = new FileStream(dawgFile, FileMode.Open, FileAccess.Read))
             {
-                Console.Write(token.Text + "/" + token.Type);
-                Console.Write(" ");
+                var tokenizer = new StandardTokenizer(stream);
+                foreach (var token in tokenizer.Traverse("研究生命起源"))
+                {
+                    Console.Write(token.Text + "/" + token.Type);
+                    Console.Write(" ");
+                }
             }
-            Console.ReadLine();
         }
 
-
+        /**      
         static void BuildDawgFile(string file)
         {
             var rootPath = AppDomain.CurrentDomain.BaseDirectory.Replace(@"\test\bin\Debug\", "");
@@ -51,5 +50,6 @@
             //保存新的dawg文件
             wordUtil.SaveTo(file);
         }
+        **/
     }
 }

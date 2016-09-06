@@ -17,18 +17,15 @@ namespace Yamool.CWSharp
         private StandardTokenizer()
         {            
         }
-        
+
         /// <summary>
         /// Initialize a new instance of StandardTokenizer.
         /// </summary>
-        /// <param name="file">The dawg format file.</param>
-        public StandardTokenizer(string file)
+        /// <param name="src">The stream of the dawg file.</param>
+        public StandardTokenizer(Stream src)
         {
-            using (var stream = Utils.LoadDawgFile(file))
-            {
-                var decoder = new DawgDecoder(Dawg.FILEVERSION);
-                _dawg = decoder.Decode(stream);
-            }
+            var decoder = new DawgDecoder(Dawg.FILEVERSION);
+            _dawg = decoder.Decode(src);
         }
 
         /// <summary>
