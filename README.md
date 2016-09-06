@@ -11,8 +11,7 @@ CWSharp
 - 可扩展的自定义分词接口
 - 支持自定义词典
 - 支持Lucene.Net
-- 支持.NET 多个版本(3.5,4.0,4.5)以及Mono
-- 支持跨平台(Windows,Linux)
+- 支持.NET以及.NET Core
 - MIT授权协议
 
 ##### 其它版本
@@ -39,8 +38,8 @@ mono Yamool.CWSharp.Tests.exe ~/CWSharp/dict/cwsharp.dawg
 ```
 
 ##### 扩展&帮助
-- [自定义词典](https://github.com/yamool/CWSharp/tree/master/dict) - 介绍关于DAWG词典文件格式、生成以及如何添加新的词汇
-- [Lucene.Net.CWSharp](https://github.com/yamool/CWSharp/tree/master/contrib/LuceneNet) - Lucene.Net的分词插件，支持搜索高亮显示
+- [自定义词典](https://github.com/zhengchun/CWSharp/tree/master/data) - 介绍关于DAWG词典文件格式、生成以及如何添加新的词汇
+- [Lucene.Net.CWSharp](https://github.com/zhengchun/CWSharp/tree/master/contrib/LuceneNet) - Lucene.Net的分词插件，支持搜索高亮显示
 - [Setting the source file character encoding for Mono's xbuild](http://stackoverflow.com/questions/6520919/setting-the-source-file-character-encoding-for-monos-xbuild) - Mono编译后字符串编码,更改为936(GB2312)
 
 ##### 说明
