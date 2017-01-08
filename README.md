@@ -1,6 +1,6 @@
 CWSharp
 ===
-.Net的中文分词组件(C#版,跨平台)，支持中英文、符号或者混合词组(比如：T恤,卡拉OK,C#等)以及自定义词典。
+.Net的跨平台的中文分词组件，支持中英文、符号或者混合词组(比如：T恤,卡拉OK,C#等)以及自定义词典。
 
 ##### 特性
 - 默认支持多种分词器
@@ -22,19 +22,12 @@ CWSharp
 ```
 nuget install CWSharp 
 ```
-- Package Manager Console
+
+- 如果想要运行在linux下，请安装.NET Core,已经测试通过centos 7.0.
+
 ```
-PM> install-package CWSharp
-```
-- 编译(Windows)
-```
-build.cmd [v4.5|v4.0|v3.5] Release
-```
-- 编译(Linux,Mono)
-```
-Install Mono
-xbuild
-mono Yamool.CWSharp.Tests.exe ~/CWSharp/dict/cwsharp.dawg
+# dotnet ./test.dll cwsharp.dawg
+研究/CJK 生命/CJK 起源/CJK
 ```
 
 ##### 扩展&帮助
