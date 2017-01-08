@@ -23,7 +23,14 @@ CWSharp
 nuget install CWSharp 
 ```
 
-- 如果想要运行在linux下，请安装.NET Core,已经测试通过centos 7.0.
+- For .Net Core (project.json)
+```
+"dependencies": {
+    "CWSharp": "1.1.0"
+  }
+```
+
+- Running on Linux
 
 ```
 # dotnet ./test.dll cwsharp.dawg
