@@ -2,7 +2,9 @@ CWSharp
 ===
 .Net的跨平台的中文分词组件，支持中英文、符号或者混合词组(比如：T恤,卡拉OK,C#等)以及自定义词典。
 
-##### 特性
+特性
+===
+
 - 默认支持多种分词器
 	- StandardTokenizer - 默认分词，基于词典
 	- BigramTokenizer - 二元分词，支持英文，数字识别
@@ -14,10 +16,16 @@ CWSharp
 - 支持.NET以及.NET Core
 - MIT授权协议
 
-##### 其它版本
-- [CWSharp-go](https://github.com/zhengchun/cwsharp-go) - Golang版
+其它版本
+===
 
-##### 安装&编译
+#### Golang版 - [CWSharp-Go](https://github.com/zhengchun/cwsharp-go)
+
+#### Python版 - [CWSharp-Python](https://github.com/zhengchun/cwsharp-python)
+
+安装&编译
+===
+
 - NuGet
 ```
 nuget install CWSharp 
@@ -37,16 +45,21 @@ nuget install CWSharp
 研究/CJK 生命/CJK 起源/CJK
 ```
 
-##### 扩展&帮助
+扩展&帮助
+===
+
 - [自定义词典](https://github.com/zhengchun/CWSharp/tree/master/data) - 介绍关于DAWG词典文件格式、生成以及如何添加新的词汇
 - [Lucene.Net.CWSharp](https://github.com/zhengchun/CWSharp/tree/master/contrib/LuceneNet) - Lucene.Net的分词插件，支持搜索高亮显示
 - [Setting the source file character encoding for Mono's xbuild](http://stackoverflow.com/questions/6520919/setting-the-source-file-character-encoding-for-monos-xbuild) - Mono编译后字符串编码,更改为936(GB2312)
 
-##### 说明
+说明
+===
+
 - 基于正向最大匹配的算法。[MMSEG算法](http://technology.chtsai.org/mmseg/)
 - 词典基于DAWG结构，比传统的前缀树占用更少的内存空间。[DAWG算法](https://en.wikipedia.org/wiki/Deterministic_acyclic_finite_state_automaton)
 
-##### 示例
+示例
+===
 
 ```c#
 var tokenizer = new StandardTokenizer("dict.dawg");
